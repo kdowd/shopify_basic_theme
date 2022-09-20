@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>
+            {{ page_title }}
+        </title>
+        {% if page_description %}
+            <meta name="description" content="{{ page_description | escape }}"/>
+        {% endif %}
+        {% render "meta-tags" %}
+        <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+        {{ content_for_header }}
+    </head>
+
+    <body>
+        <div>{{ content_for_layout }}</div>
+    </body>
+</html>
