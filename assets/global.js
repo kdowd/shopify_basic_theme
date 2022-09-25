@@ -1,1 +1,1 @@
-alert("goodbye cruel world");
+console.log("goodbye cruel words....");
