@@ -1,10 +1,13 @@
 console.log("hello again");
 
 
-function handleResponse() {
-  console.log(JSON.parse(this.responseText));
+// fetch('/?sections=header,footer').then(response=> console.log(response))
+
+
+async function loadData() {
+  const response = await fetch('/?sections=header,footer');
+  const data = await response.json();
+  console.log(data); 
+ 
 }
-const request = new XMLHttpRequest();
-request.addEventListener('load', handleResponse);
-request.open('GET', '/?sections=header,footer', true);
-request.send();
+loadData();
