@@ -2,7 +2,7 @@ console.log("hello again");
 
 
 function handleResponse() {
-  JSON.parse(this.responseText);
+  console.log(JSON.parse(this.responseText));
 }
 const request = new XMLHttpRequest();
 request.addEventListener('load', handleResponse);
