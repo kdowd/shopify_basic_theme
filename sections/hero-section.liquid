@@ -15,7 +15,7 @@ span {
 
     <span>{{ item.title | link_to: item.url }}</span>
     <p>{{ item.content }}</p>
-    <img src={{ item.media[0].preview_image.src }} alt=""/>
+    <img src={{ item.featured_image }} alt=""/>
 
 
 {% endfor %}
