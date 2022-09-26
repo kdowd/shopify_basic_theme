@@ -1,19 +1,35 @@
-
-
 {% stylesheet %}
+
+span {
+    color: red
+}
+
 {% endstylesheet %}
 
 
-<span>I am a hero</span>
+<span>Superfoods</span>
+{% assign collection_handle = 'superfoods' %}
+<script>console.clear();</script>
+{% for item in collections[collection_handle].products %}
+    <script>console.log({{ item | json}});</script>
+
+    <span>{{ item.title | link_to: item.url }}</span>
+    <p>{{ item.content }}</p>
+    <img src={{ item.media[0].preview_image.src }} alt=""/>
+
+
+{% endfor %}
+
 
 {% javascript %}
+
+
+
 {% endjavascript %}
 
 
-
-
 {% schema %}
-  {
+{
     "name": "hero-section",
     "settings": []
   }
